@@ -75,6 +75,24 @@ or with npm:
 npm run start
 ```
 
+### Deploying to GitHub Pages
+
+This project is configured for easy deployment to GitHub Pages:
+
+1. Create a GitHub repository for your project
+2. Push your code to the repository
+3. Deploy using the GitHub Actions workflow:
+   ```bash
+   git push
+   ```
+
+Alternatively, you can deploy manually:
+```bash
+bun run deploy
+```
+
+The site will be available at `https://yourusername.github.io/reportu`
+
 ## Project Structure
 
 ```

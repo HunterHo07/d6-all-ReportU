@@ -162,7 +162,7 @@ export default function Home() {
             </p>
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href="/report" className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
+              <a href={process.env.NODE_ENV === 'production' ? '/reportu/report' : '/report'} className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
                 Report an Incident
               </a>
               <button className="px-8 py-4 bg-white text-indigo-600 font-medium rounded-full border border-indigo-200 hover:border-indigo-400 transition-all shadow-md hover:shadow-lg">

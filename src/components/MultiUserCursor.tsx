@@ -31,7 +31,11 @@ const MultiUserCursor = () => {
     // Function to detect current page
     const detectPage = () => {
       const path = window.location.pathname;
-      if (path.includes('/report')) {
+      // Handle basePath for GitHub Pages
+      const basePath = process.env.NODE_ENV === 'production' ? '/reportu' : '';
+      const normalizedPath = path.replace(basePath, '');
+
+      if (normalizedPath.includes('/report')) {
         setCurrentPage('report');
       } else {
         setCurrentPage('home');
@@ -54,8 +58,8 @@ const MultiUserCursor = () => {
 
     // For Next.js route changes
     const originalPushState = window.history.pushState;
-    window.history.pushState = function() {
-      originalPushState.apply(this, arguments);
+    window.history.pushState = function(...args) {
+      originalPushState.apply(this, args);
       handleRouteChange();
     };
 
@@ -89,8 +93,8 @@ const MultiUserCursor = () => {
       { name: 'Grace', color: '#FF9933' }
     ];
 
-    // Set the appropriate user list based on current page
-    const fakeUsers = currentPage === 'home' ? homePageUsers : reportPageUsers;
+    // Get the appropriate user list based on current page
+    const usersForPage = currentPage === 'home' ? homePageUsers : reportPageUsers;
 
     const generateRandomPosition = () => {
       return {
