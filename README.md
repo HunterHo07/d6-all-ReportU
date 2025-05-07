@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReportU Demo (NextJS)
+
+This is the demo implementation of the ReportU platform using NextJS, showcasing stunning UI and animations.
+
+## Features
+
+- Modern, responsive UI with advanced animations
+- Interactive reporting flow demonstration
+- Cross-border reporting visualization
+- Status tracking simulation
+
+## Tech Stack
+
+- **Framework**: Next.js
+- **Styling**: TailwindCSS
+- **Animations**:
+  - GSAP for smooth transitions and complex animations
+  - Lottie for lightweight, illustrative animations
+  - Three.js for 3D elements and backgrounds
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Bun 1.0 or later (recommended)
+- Node.js 18.0 or later (alternative)
+
+### Installation
+
+1. Clone the repository
+2. Navigate to the demo directory:
+   ```bash
+   cd demo
+   ```
+3. Install dependencies:
+   ```bash
+   bun install
+   ```
+   or with npm:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server:
 
 ```bash
+bun run dev
+```
+or with npm:
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run build
+```
+or with npm:
+```bash
+npm run build
+```
 
-## Learn More
+### Running Production Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun run start
+```
+or with npm:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+demo/
+├── public/             # Static assets
+├── src/
+│   ├── app/            # Next.js app router
+│   ├── components/     # Reusable UI components
+│   ├── lib/            # Utility functions and hooks
+│   └── styles/         # Global styles
+├── next.config.js      # Next.js configuration
+├── package.json        # Dependencies and scripts
+├── postcss.config.js   # PostCSS configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── tsconfig.json       # TypeScript configuration
+```
 
-## Deploy on Vercel
+## Animation Guidelines
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Use GSAP for complex animations and transitions
+- Use Lottie for lightweight, illustrative animations
+- Use Three.js for 3D elements and backgrounds
+- Ensure animations are performant and accessible
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design Principles
+
+- No standard templates
+- UI must feel new and delightful
+- Unique animations/transitions
+- Surprising layouts encouraged
+- Every component should look unique
+
+## Troubleshooting
+
+### Common Issues
+
+#### Build Errors
+- Ensure all dependencies are installed: `bun install`
+- Clear Next.js cache: `rm -rf .next`
+- Check for TypeScript errors: `bun run lint`
+
+#### Animation Performance
+- Reduce animation complexity on mobile devices
+- Use `will-change` CSS property sparingly
+- Implement throttling for scroll-based animations
+
+#### Three.js Issues
+- Check WebGL compatibility with `THREE.WEBGL.isWebGLAvailable()`
+- Reduce polygon count for 3D models
+- Implement progressive loading for complex scenes
+
+## Creator
+
+- HunterHo
