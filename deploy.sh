@@ -1,8 +1,17 @@
 #!/bin/bash
 
+# Detect if npm or bun should be used
+if command -v bun &> /dev/null; then
+  PACKAGE_MANAGER="bun"
+else
+  PACKAGE_MANAGER="npm"
+fi
+
+echo "Using $PACKAGE_MANAGER for build and deployment..."
+
 # Build the Next.js application
 echo "Building Next.js application..."
-bun run build
+$PACKAGE_MANAGER run build
 
 # Create .nojekyll file to bypass Jekyll processing
 echo "Creating .nojekyll file..."

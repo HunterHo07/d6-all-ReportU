@@ -35,10 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
+          cache: 'npm'
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
@@ -58,9 +55,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/bun.lockb') }}-
       - name: Install dependencies
-        run: bun install
+        run: npm install
       - name: Build with Next.js
-        run: bun run build
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -21,6 +21,9 @@ const HeroBackground = () => {
   useEffect(() => {
     if (!isClient || !containerRef.current) return;
 
+    // Safety check for browser environment
+    if (typeof window === 'undefined') return;
+
     // Initialize scene
     const scene = new THREE.Scene();
     sceneRef.current = scene;

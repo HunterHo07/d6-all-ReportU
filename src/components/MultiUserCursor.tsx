@@ -32,7 +32,7 @@ const MultiUserCursor = () => {
     const detectPage = () => {
       const path = window.location.pathname;
       // Handle basePath for GitHub Pages
-      const basePath = process.env.NODE_ENV === 'production' ? '/reportu' : '';
+      const basePath = process.env.NODE_ENV === 'production' ? '/d6-fe-ReportU' : '';
       const normalizedPath = path.replace(basePath, '');
 
       if (normalizedPath.includes('/report')) {

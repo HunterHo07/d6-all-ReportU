@@ -86,9 +86,22 @@ This project is configured for easy deployment to GitHub Pages:
    git push
    ```
 
-Alternatively, you can deploy manually:
+You can deploy manually using one of these methods:
+
 ```bash
+# Using the Node.js script (recommended)
 bun run deploy
+
+# Using the shell script directly
+bun run deploy:manual
+```
+
+If you encounter issues with .gitignore preventing deployment:
+```bash
+# Force add the out directory
+git add -f out/
+git commit -m "Deploy to GitHub Pages"
+git subtree push --prefix out origin gh-pages
 ```
 
 The site will be available at `https://yourusername.github.io/reportu`
